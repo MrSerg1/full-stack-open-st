@@ -3,7 +3,9 @@ sequenceDiagram
     Note right of browser: The browser executes the JS code activating the event handler.
 
     browser -->>server: POST https://studies.cs.helsinki.fi/exampleapp.com/new_note
-    
+    activate server
+    server -->>browser: url redirection.
+
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
     server-->>browser: the css file
@@ -19,5 +21,5 @@ sequenceDiagram
     server -->>browser: the data in a json file
     deactivate server
 
-    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server.
 
