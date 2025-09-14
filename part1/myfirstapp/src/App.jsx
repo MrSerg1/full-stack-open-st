@@ -1,7 +1,8 @@
 const App = () => {
     //constant definitions
-    const course = 'Half Stack application development'
-    const parts = [
+    const course = {
+    name: 'Half Stack application development',
+    parts: [
     {
     name :'Fundamentals of react:',
     exercises : 10
@@ -15,21 +16,24 @@ const App = () => {
     exercises: 14
     }
     ]
-
+    }
+    
     //component Header
+    const headr = course.name
     const Header = ()=> { 
     return(
-      <h1>{course}</h1>
+      <h1>{headr}</h1>
     )
     }
+
     //component Content
+    const parts = course.parts
     const Content = ({parts}) =>
     <>
         {parts.map((part,index) => 
           <p key={index}>{part.name} {part.exercises}</p>
         )}
     </>
-   
 
     //Component Total
   const Total1 = parts.map(part1 => part1.exercises).reduce((acc,curr) => {return acc + curr},0)
